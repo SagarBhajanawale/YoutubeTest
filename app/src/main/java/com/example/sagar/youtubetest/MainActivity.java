@@ -55,7 +55,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void showVideo() {
 
- /*       String URL="https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCUHW94eEFW7hkUMVaZz4eDg&maxResults=25&q=surfing&key=AIzaSyD0MEFQoOetSQD2GdO1Gg9uuPP1OodYbag";
+        Intent myIntent = new Intent(MainActivity.this, ChannelActivity.class);
+        MainActivity.this.startActivity(myIntent);
+
+
+
+
+ /*      String URL="https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCUHW94eEFW7hkUMVaZz4eDg&maxResults=25&q=surfing&key=AIzaSyD0MEFQoOetSQD2GdO1Gg9uuPP1OodYbag";
         RequestQueue requestQueue=Volley.newRequestQueue(getApplicationContext());
         StringRequest stringRequest=new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
@@ -103,10 +109,6 @@ public class MainActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
 
         */
-
-
-        Intent myIntent = new Intent(MainActivity.this, ChannelActivity.class);
-        MainActivity.this.startActivity(myIntent);
 
 
     }

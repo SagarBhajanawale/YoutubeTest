@@ -44,7 +44,7 @@ public class CustomListAdapter extends BaseAdapter {
         }
         if (convertView == null) {
 
-            convertView = this.inflater.inflate(R.layout.activity_video, null);
+            convertView = this.inflater.inflate(R.layout.videolist, null);
         }
         if (this.imageLoader == null) {
             this.imageLoader = AppController.getInstance().getImageLoader();

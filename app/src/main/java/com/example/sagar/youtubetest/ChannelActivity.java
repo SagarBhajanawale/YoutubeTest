@@ -30,8 +30,6 @@ public class ChannelActivity extends AppCompatActivity {
     ListView lvVideo;
     ArrayList<VideoDetails> videoDetailsArrayList;
     CustomListAdapter customListAdapter;
-    ArrayAdapter<String> adapter;
-
 
     //String searchName;
     String TAG="ChannelActivity";
@@ -40,7 +38,7 @@ public class ChannelActivity extends AppCompatActivity {
     // UC6nSFpj9HTCZ5t-N3Rm3-HA
     //UC1qUIXjkctlEL45bd0hmdoA
 
-    String URL="https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCUHW94eEFW7hkUMVaZz4eDg&maxResults=25&q=surfing&key=AIzaSyD0MEFQoOetSQD2GdO1Gg9uuPP1OodYbag";
+    String URL="https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCUHW94eEFW7hkUMVaZz4eDg&maxResults=50&q=surfing&key=AIzaSyD0MEFQoOetSQD2GdO1Gg9uuPP1OodYbag";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +81,7 @@ public class ChannelActivity extends AppCompatActivity {
                         videoDetails.setVideoName(jsonsnippet.getString("title"));
                         videoDetails.setVideoDesc(jsonsnippet.getString("description"));
                         videoDetails.setVideoId(videoid);
-                        Log.i(TAG, "onResponse:bjdhjddhbcjd ");
+                        
                         videoDetailsArrayList.add(videoDetails);
                     }
                     lvVideo.setAdapter(customListAdapter);
