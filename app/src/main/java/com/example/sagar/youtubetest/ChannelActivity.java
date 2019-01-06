@@ -15,6 +15,11 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,7 +35,7 @@ public class ChannelActivity extends AppCompatActivity {
     ListView lvVideo;
     ArrayList<VideoDetails> videoDetailsArrayList;
     CustomListAdapter customListAdapter;
-
+    private AdView mAdView;
     //String searchName;
     String TAG="ChannelActivity";
     // UC1NF71EwP41VdjAU1iXdLkw
@@ -38,12 +43,49 @@ public class ChannelActivity extends AppCompatActivity {
     // UC6nSFpj9HTCZ5t-N3Rm3-HA
     //UC1qUIXjkctlEL45bd0hmdoA
 
-    String URL="https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCUHW94eEFW7hkUMVaZz4eDg&maxResults=50&q=surfing&key=AIzaSyD0MEFQoOetSQD2GdO1Gg9uuPP1OodYbag";
+    String URL="https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCsTcErHg8oDvUnTzoqsYeNw&maxResults=50&q=surfing&key=AIzaSyD0MEFQoOetSQD2GdO1Gg9uuPP1OodYbag";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_channel);
+
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                // Code to be executed when an ad request fails.
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                // Code to be executed when the user has left the app.
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when when the user is about to return
+                // to the app after tapping on an ad.
+            }
+        });
+
+
+
         lvVideo=(ListView)findViewById(R.id.videoList);
         videoDetailsArrayList=new ArrayList<>();
         customListAdapter=new CustomListAdapter(ChannelActivity.this,videoDetailsArrayList);
@@ -81,7 +123,7 @@ public class ChannelActivity extends AppCompatActivity {
                         videoDetails.setVideoName(jsonsnippet.getString("title"));
                         videoDetails.setVideoDesc(jsonsnippet.getString("description"));
                         videoDetails.setVideoId(videoid);
-                        
+
                         videoDetailsArrayList.add(videoDetails);
                     }
                     lvVideo.setAdapter(customListAdapter);

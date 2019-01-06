@@ -3,4 +3,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name = "channel_id">UCsTcErHg8oDvUnTzoqsYeNw</string>
+    <string name = "api_key">AIzaSyD0MEFQoOetSQD2GdO1Gg9uuPP1OodYbag</string>
+
 </resources>

@@ -26,6 +26,8 @@ import java.lang.ref.ReferenceQueue;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+/*
     EditText etSearch;
     Button btnSearch;
     ListView lvVideo;
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
- /*      String URL="https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCUHW94eEFW7hkUMVaZz4eDg&maxResults=25&q=surfing&key=AIzaSyD0MEFQoOetSQD2GdO1Gg9uuPP1OodYbag";
+      String URL="https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCUHW94eEFW7hkUMVaZz4eDg&maxResults=25&q=surfing&key=AIzaSyD0MEFQoOetSQD2GdO1Gg9uuPP1OodYbag";
         RequestQueue requestQueue=Volley.newRequestQueue(getApplicationContext());
         StringRequest stringRequest=new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
@@ -108,8 +110,13 @@ public class MainActivity extends AppCompatActivity {
         stringRequest.setRetryPolicy(policy);
         requestQueue.add(stringRequest);
 
-        */
+
 
 
     }
+
+    */
 }
+
+
+

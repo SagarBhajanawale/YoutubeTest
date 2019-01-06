@@ -36,11 +36,11 @@ public class YoutubeFragment extends Fragment {
                     YPlayer = youTubePlayer;
                     YPlayer.setFullscreen(false);
 
-/*
-                    YPlayer.loadVideo("2zNSgSzhBfM");
-*/                  Bundle bundle=getActivity().getIntent().getExtras();
+
+                   // YPlayer.loadVideo("2zNSgSzhBfM");
+                 Bundle bundle=getActivity().getIntent().getExtras();
                     YPlayer.cueVideo("2zNSgSzhBfM");
-                    /*YPlayer.play();*/
+                  //  YPlayer.play();
                 }
             }
 
@@ -61,3 +61,4 @@ public class YoutubeFragment extends Fragment {
 
 
 }
+

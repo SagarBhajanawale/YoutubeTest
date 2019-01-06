@@ -28,5 +28,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.mcxiaoke.volley:library:1.0.19'
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
-
+    implementation 'com.google.android.gms:play-services-ads:17.1.2'
 }
